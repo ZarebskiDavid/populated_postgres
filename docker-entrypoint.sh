@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -Eeo pipefail
 # TODO swap to -Eeuo pipefail above (after handling all potentially-unset variables)
 
@@ -169,10 +169,10 @@ if [ "$1" = 'postgres' ]; then
 
 		unset PGPASSWORD
 		
-		cd /home/$POSTGRES_USER
-		unzip boston-crime-data.zip
-		psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f init.sql
-		rm -rf boston-crime-data
+		#cd /home/$POSTGRES_USER
+		#unzip boston-crime-data.zip
+		#psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f init.sql
+		#rm -rf boston-crime-data
 
 		echo
 		echo 'PostgreSQL init process complete; ready for start up.'
@@ -181,9 +181,9 @@ if [ "$1" = 'postgres' ]; then
 fi
 
 # import data into db
-#cd /home/$POSTGRES_USER
-#unzip boston-crime-data.zip
-#psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f init.sql
+
+#/usr/bin/unzip boston-crime-data.zip
+#/usr/local/bin/psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f /home/$POSTGRES_USER/init.sql
 #rm -rf boston-crime-data
 
 exec "$@"

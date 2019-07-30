@@ -8,6 +8,6 @@ services:
     volumes: 
       - ./init.sql:/home/postgres/init.sql
       - ./boston-crime-data.zip:/home/postgres/boston-crime-data.zip
-      #- ./entrypoint.sh:/usr/local/bin/docker-entrypoint.sh
+      #- ./docker-entrypoint.sh:/docker-entrypoint.sh
     ports: 
       - 5432:5432

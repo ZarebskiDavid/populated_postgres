@@ -1,5 +1,6 @@
 SET client_encoding = 'ISO_8859_1';
 CREATE TABLE IF NOT EXISTS crimes(
+	id SERIAL,
 	incident_number VARCHAR (50) NOT NULL, 
 	offense_code VARCHAR (20) NOT NULL,
 	offense_code_group VARCHAR (50) NOT NULL,
