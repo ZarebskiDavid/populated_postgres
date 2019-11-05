@@ -1,13 +1,9 @@
 version: '3.7'
 
 services:
-  external_database:
-    container_name: external_database
-    image: postgres:11.4-alpine
+  populated_db:
+    container_name: populated_db
+    build: 
+      context: ./src
+      dockerfile: Dockerfile
     env_file: postgres.env
-    volumes: 
-      - ./init.sql:/home/postgres/init.sql
-      - ./boston-crime-data.zip:/home/postgres/boston-crime-data.zip
-      #- ./docker-entrypoint.sh:/docker-entrypoint.sh
-    ports: 
-      - 5432:5432
