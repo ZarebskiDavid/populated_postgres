@@ -1,12 +1,12 @@
-#!/usr/bin/env ash
+#!/usr/bin/env bash
 
 # import data into db
 
-#/usr/bin/unzip /data/boston-crime-data.zip
-#/usr/local/bin/psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f /home/$POSTGRES_USER/init.sql
-#rm -rf /data/boston-crime-data
-#
+/usr/bin/unzip /docker-entrypoint-initdb.d/boston-crime-data.zip
+/usr/local/bin/psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f /docker-entrypoint-initdb.d/init.sql
+rm -rf /docker-entrypoint-initdb.d/boston-crime-data
+rm -rf /docker-entrypoint-initdb.d/boston-crime-data.zip
 
-echo "COUCOU, C EST NOUS"
+echo "Finished loading data"
 
 exec "$@"

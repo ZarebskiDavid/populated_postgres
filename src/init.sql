@@ -21,4 +21,4 @@ CREATE TABLE IF NOT EXISTS crimes(
 );
 
 COPY crimes(incident_number,offense_code,offense_code_group,offense_description,district,reporting_area,shooting,occurred_on_date,year,month,day_of_week,hour,ucr_part,street,latitude,longitude,location)
-FROM '/home/postgres/boston-crime-data/crime.csv' DELIMITER ',' NULL '' CSV HEADER ;
+FROM '/docker-entrypoint-initdb.d/boston-crime-data/crime.csv' DELIMITER ',' NULL '' CSV HEADER ;
