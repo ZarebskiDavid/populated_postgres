@@ -1,11 +1,13 @@
 FROM postgres:11.4-alpine
 
-ENV POSTGRES_USER postgres
-ENV POSTGRES_PASSWORD boston_password
-ENV POSTGRES_DB crime_boston
+ENV POSTGRES_USER some_user
+ENV POSTGRES_PASSWORD some_password
+ENV POSTGRES_DB some_db
 
-COPY ./entrypoint.sh /docker-entrypoint-initdb.d/entrypoint.sh
-COPY ./init.sql /docker-entrypoint-initdb.d/init.sql
-COPY ./boston-crime-data.zip /docker-entrypoint-initdb.d/boston-crime-data.zip
+COPY ./db_init.sh /docker-entrypoint-initdb.d/db_init.sh
+COPY ./scripts /scripts
+COPY ./data /data
 
-RUN chmod +x /docker-entrypoint-initdb.d/entrypoint.sh
+RUN chmod -R 777 /data
+
+RUN chmod +x /docker-entrypoint-initdb.d/db_init.sh

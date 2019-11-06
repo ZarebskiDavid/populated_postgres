@@ -6,4 +6,3 @@ services:
     build: 
       context: ./src
       dockerfile: Dockerfile
-    env_file: postgres.env

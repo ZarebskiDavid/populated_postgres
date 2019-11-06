@@ -1,5 +1,5 @@
 SET client_encoding = 'ISO_8859_1';
-CREATE TABLE IF NOT EXISTS crimes(
+CREATE TABLE IF NOT EXISTS boston_crimes(
 	id SERIAL,
 	incident_number VARCHAR (50) NOT NULL, 
 	offense_code VARCHAR (20) NOT NULL,
@@ -20,5 +20,5 @@ CREATE TABLE IF NOT EXISTS crimes(
 	location VARCHAR (50) NULL
 );
 
-COPY crimes(incident_number,offense_code,offense_code_group,offense_description,district,reporting_area,shooting,occurred_on_date,year,month,day_of_week,hour,ucr_part,street,latitude,longitude,location)
-FROM '/docker-entrypoint-initdb.d/boston-crime-data/crime.csv' DELIMITER ',' NULL '' CSV HEADER ;
+COPY boston_crimes(incident_number,offense_code,offense_code_group,offense_description,district,reporting_area,shooting,occurred_on_date,year,month,day_of_week,hour,ucr_part,street,latitude,longitude,location)
+FROM '/data/boston-crime-data/crime.csv' DELIMITER ',' NULL '' CSV HEADER ;
