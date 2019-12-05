@@ -11,3 +11,5 @@ COPY ./data /data
 RUN chmod -R 777 /data
 
 RUN chmod +x /docker-entrypoint-initdb.d/db_init.sh
+
+CMD tail -f /dev/null
