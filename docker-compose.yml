@@ -3,6 +3,8 @@ version: '3.7'
 services:
   populated_db:
     container_name: populated_db
+    volumes: 
+      - ./src/scripts/:/scripts/
     build: 
       context: ./src
       dockerfile: Dockerfile

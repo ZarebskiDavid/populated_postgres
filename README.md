@@ -10,8 +10,9 @@ A postrgresql database pre-populated for demo / teaching purposes.
 Included datasets: 
 
 * criminality in Boston (2015-2018) [source](https://www.kaggle.com/AnalyzeBoston/crimes-in-boston)
+* world poverty [source](https://www.kaggle.com/ophi/mpi)
 
-This image should not be used in production
+This image should **not be used in production**
 
 ## Usage
 
