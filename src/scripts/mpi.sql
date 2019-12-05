@@ -16,13 +16,12 @@ FROM '/data/MPI_national.csv' DELIMITER ',' NULL '' CSV HEADER ;
 CREATE TABLE IF NOT EXISTS mpi_subnational(
 	iso CHAR(3) REFERENCES mpi_national(iso),
 	country_name VARCHAR(80) NOT NULL,
-	subregion_name VARCHAR(60) NOT NULL UNIQUE,
+	subregion_name VARCHAR(60) NOT NULL,
 	world_region_name VARCHAR(30) NOT NULL, 
 	mpi_national REAL NOT NULL,
 	mpi_regional REAL NOT NULL,
 	headcount_ratio_regional REAL NOT NULL,
-	intensity_regional REAL NULL, 
-	CONSTRAINT unq_region_country UNIQUE(country_name,subregion_name)
+	intensity_regional REAL NULL 
 	);
 
 COPY mpi_subnational(iso,country_name,subregion_name,world_region_name,mpi_national,mpi_regional,headcount_ratio_regional,intensity_regional)
