@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS mpi_national(
 	); 
 
 COPY mpi_national(iso,country_name,mpi_urban,headcount_ratio_urban,intensity_urban,mpi_rural,headcount_ratio,intensity_rural)
-FROM '/data/MPI_national.csv' DELIMITER ',' NULL '' CSV HEADER ;
+FROM '/data/mpi/MPI_national.csv' DELIMITER ',' NULL '' CSV HEADER ;
 
 CREATE TABLE IF NOT EXISTS mpi_subnational(
 	iso CHAR(3) REFERENCES mpi_national(iso),
@@ -25,4 +25,4 @@ CREATE TABLE IF NOT EXISTS mpi_subnational(
 	);
 
 COPY mpi_subnational(iso,country_name,subregion_name,world_region_name,mpi_national,mpi_regional,headcount_ratio_regional,intensity_regional)
-FROM '/data/MPI_subnational.csv' DELIMITER ',' NULL '' CSV HEADER ;
+FROM '/data/mpi/MPI_subnational.csv' DELIMITER ',' NULL '' CSV HEADER ;
