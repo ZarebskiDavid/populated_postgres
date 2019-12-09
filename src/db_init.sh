@@ -26,5 +26,6 @@ sed -i 's/..$//g' /data/population/API_SP.POP.TOTL_DS2_en_csv_v2_511378.csv
 rm -rf /data/boston-crime-data
 rm -rf /data/mpi
 rm -rf /data/population
+rm -rf /data/corruption
 
 echo "Finished loading data"
