@@ -1,0 +1,25 @@
+SET client_encoding = 'UTF-8';
+CREATE TABLE IF NOT EXISTS world_corruption(
+	country_name CHAR(60) NOT NULL,
+	"1998" REAL NULL,
+	"1999" REAL NULL,
+	"2000" REAL NULL,
+	"2001" REAL NULL,
+	"2002" REAL NULL,
+	"2003" REAL NULL,
+	"2004" REAL NULL,
+	"2005" REAL NULL,
+	"2006" REAL NULL,
+	"2007" REAL NULL,
+	"2008" REAL NULL,
+	"2009" REAL NULL,
+	"2010" REAL NULL,
+	"2011" REAL NULL,
+	"2012" REAL NULL,
+	"2013" REAL NULL,
+	"2014" REAL NULL,
+	"2015" REAL NULL
+	);
+
+COPY world_corruption(country_name,"1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015")
+FROM '/data/corruption/data/data_csv.csv' DELIMITER AS ',' NULL AS '-' CSV HEADER ;
