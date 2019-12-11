@@ -21,6 +21,8 @@ sed -i 's/..$//g' /data/population/API_SP.POP.TOTL_DS2_en_csv_v2_511378.csv
 /usr/local/bin/psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f /scripts/mpi.sql
 /usr/local/bin/psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f /scripts/population.sql
 /usr/local/bin/psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f /scripts/corruption.sql
+/usr/local/bin/psql -U $POSTGRES_USER -d $POSTGRES_DB -a -f /scripts/views.sql
+
 
 # cleanup data
 rm -rf /data/boston-crime-data
