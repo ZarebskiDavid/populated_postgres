@@ -11,6 +11,7 @@ Included datasets:
 
 * criminality in Boston (2015-2018) [source](https://www.kaggle.com/AnalyzeBoston/crimes-in-boston)
 * world poverty [source](https://www.kaggle.com/ophi/mpi)
+* world population [source](https://data.worldbank.org/indicator/sp.pop.totl)
 * world corruption [source](https://datahub.io/core/corruption-perceptions-index)
 
 This image should **not be used in production**
