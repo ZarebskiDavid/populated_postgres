@@ -6,11 +6,11 @@ CREATE TABLE IF NOT EXISTS mpi_national(
 	headcount_ratio_urban REAL NOT NULL,
 	intensity_urban REAL NOT NULL,
 	mpi_rural REAL NOT NULL,
-	headcount_ratio REAL NOT NULL,
+	headcount_ratio_rural REAL NOT NULL,
 	intensity_rural REAL NOT NULL
 	); 
 
-COPY mpi_national(iso,country_name,mpi_urban,headcount_ratio_urban,intensity_urban,mpi_rural,headcount_ratio,intensity_rural)
+COPY mpi_national(iso,country_name,mpi_urban,headcount_ratio_urban,intensity_urban,mpi_rural,headcount_ratio_rural,intensity_rural)
 FROM '/data/mpi/MPI_national.csv' DELIMITER ',' NULL '' CSV HEADER ;
 
 CREATE TABLE IF NOT EXISTS mpi_subnational(
